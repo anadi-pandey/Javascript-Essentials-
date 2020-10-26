@@ -1,0 +1,140 @@
+$colors:
+  rgba(120,34,78,.75),
+  rgba(34,120,78,0.75),
+  rgba(78,34,120,0.75),
+  rgba(55,78,90,0.75);
+
+  $size: 10px;
+  $thickness: 4px;
+
+//   Calculated Variable
+
+$lat: ($size - $thickness) / 2;
+$offset: $lat - $thickness;
+
+.loader{
+    position: relative;
+    width: $size;
+    height: $thickness;
+    border: solid black 1px;
+    
+
+    
+    &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        // border: solid red 1px;
+        // background-color: aqua;
+        width: $thickness;
+        height: $thickness;
+        transform: translate(50%,-50%);
+ 
+
+    }
+
+
+     
+    &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -50%;
+        // border: solid red 1px;
+        // background-color: aqua;
+        width: $thickness;
+        height: $thickness;
+        transform: translate(50%,-50%);
+ 
+
+    }
+
+    &:before{
+        animation: before 1s infinite;
+    }
+
+    &:after{
+        animation: after 1s infinite;
+    }
+}
+
+@keyframes before {
+0% {
+    width: $size;
+    border-top: solid red 1px;
+}
+35% {
+    width: $size;
+    border-right: solid hotpink 1px;
+}
+
+70% {
+    width: $size;
+    border-bottom: solid red 1px;
+}
+
+100% {
+    width: $size;
+    border-left: solid hotpink 1px;
+}
+
+}
+
+@keyframes after {
+    0% {
+        width: $size;
+        border-top: solid red 2px;
+        
+    }
+    25% {
+        width: $size;
+        border-right: solid hotpink 2px;
+    }
+    
+    50% {
+        width: $size;
+        border-bottom: solid red 2px;
+    }
+    
+    75% {
+        width: $size;
+        border-left: solid hotpink 2px;
+    }
+}
+
+
+#Book{
+    border: solid black 4px;
+    display: block;
+    text-align: center;
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: gold;
+    color: purple;
+    font-size: 3rem;
+}
+
+.hide{
+    height: 0;
+    overflow: hidden;
+}
+
+
+.cta_2{
+ position: relative;
+ top: 50px;
+}
+#Book_2{
+    border: solid black 4px;
+    display: block;
+    text-align: center;
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: cyan;
+    color: black;
+    font-size: 3rem;  
+    text-decoration: none;
+}
