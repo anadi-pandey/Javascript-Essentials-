@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Object basics: Task 2</title>
+    <style>
+        p {
+            color: purple;
+            margin: 0.5em 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <section class="preview">
+
+
+
+    </section>
+
+</body>
+<script>
+    let bandInfo = {
+        name: 'lost stories',
+        nationality: 'Indian',
+        genre: 'lofi',
+        members: 4,
+        formed: 1997,
+        split: false,
+        Albums: {
+            
+            Released: [2017, 2019, 2018]
+        }
+    }
+    // Add your code here
+
+
+    // Don't edit the code below here!
+
+    const section = document.querySelector('section');
+        let para1 = document.createElement('p');
+        para1.textContent = bandInfo;
+        section.appendChild(para1);
+</script>
+
+</html>

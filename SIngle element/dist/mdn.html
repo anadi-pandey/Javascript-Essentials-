@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Object-oriented JavaScript example</title>
+</head>
+
+<body>
+    <p>This example requires you to enter commands in your browser's JavaScript console (see <a
+            href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What
+            are browser developer tools</a> for more information).</p>
+
+</body>
+
+<script>
+    const Person = {
+        // name: ['BOb', 'Smith'],
+    //    ANother OBJECT AS MEMBER OF ORIGINAL OBJECT Person
+        name : {
+  first: 'Bob',
+  last: 'Smith'
+},
+        age: 32,
+        gender: 'male',
+        interests: ['music', 'skiing'],
+        bio: function () {
+            alert(this.name[0] + ' ' + this.name[1] + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');
+        },
+        greeting: function(){
+alert( "Hi I am" + this.name[0] + "My age :" + this.age);
+        },
+
+        
+    }
+    // let myDataName = nameInput.value;
+    // let myDataValue = nameValue.value;
+
+    // Person[myDataName] = myDataValue;
+
+    let myDataName = 'height';
+    let myDataValue = '1.75m';
+    Person[myDataName] = myDataValue;
+
+
+
+    // Functions run once invoked 
+    // Person.bio();
+    // Person.greeting();
+</script>
+
+<!--  The use of objects is widely done knowingly or unknowingly the fact that when we 
+create a string it is nothing but instance of String which already has some properties and methods whic
+we use to do manipulations with STring or Array's instantiated version -->
+</html>

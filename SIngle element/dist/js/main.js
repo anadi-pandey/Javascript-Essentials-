@@ -79,3 +79,93 @@ function reveall(e,current){
 
 CTAa.addEventListener('click' , function(e) { reveall(e,this); }, false);
 
+// ===== Objects =====
+
+// Method 1 OBJECT LITERAL 
+let school = {
+    name: 'CIty MOntessori School',
+    city: 'Lucknow',
+    since: '1950',
+    displayInfo: function (){
+        console.log(`${school.name.split(' ')[0]}`);
+        console.log(`${school.city}`);
+       
+    }
+    
+}
+
+school.displayInfo();
+
+// Method 2 Object Constructor 
+
+const company = new Object();
+company.name = 'Cuelogic';
+company.location = 'Bund Garden';
+company.employees = '201-500';
+
+school.displayIt = function (){
+    console.log(`${company.name} is in ${company.location} with around ${company.employees} employees`);
+}
+
+school.displayIt();
+
+// Multiple object Creation to make objects of same type.
+
+function Person(first,last,age,eye)
+{
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eye;
+    // Adding function to the constructor function.
+    this.name = function() {return this.firstName + " " + this.lastName;};
+   
+
+}
+
+var myFather = new Person("Sunil Kumar ", "Pandey", "50","black");
+
+var mySelf = new Person("Anadi Krishna","Pandey","21","black");
+
+
+
+mySelf.name = function () {
+    return (this.firstName) + " " + (this.lastName);
+}
+
+
+document.getElementById("personName").innerHTML = "My father is " + myFather.age + " years old." +" Name: " + myFather.name();
+
+// new property cannot be added to constructor functions.
+
+// ------- Adding a method to object-----------
+
+// deleted the last name property from mySelf
+
+delete mySelf.lastName;
+
+
+
+console.log(mySelf.name());
+
+// using prototype adding a new property 
+
+Person.prototype.hobby = "DANCE";
+
+console.log(mySelf.hobby);
+
+
+// The JavaScript prototype property also allows you to add new methods to objects constructors:
+
+Person.prototype.into = function (){
+    return this.hobby + " is like by" + this.name();
+}
+
+console.log(mySelf.into());
+
+// Iterating over OBject keys 
+
+for (let key in mySelf)
+{
+    console.log(key);
+}
